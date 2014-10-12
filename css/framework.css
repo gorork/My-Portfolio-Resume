@@ -1,0 +1,60 @@
+/***-- Custom CSS Framework --***/
+
+html * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+*, *:after, *:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.row {
+    width: 100%;
+    flex-wrap: wrap;
+    display: flex;
+}
+
+@media (min-width: 769px) {
+    .col-1 {
+        width: 6.5%;
+    }
+    .col-2 {
+        width: 15%;
+    }
+    .col-3 {
+        width: 23.5%;
+    }
+    .col-4 {
+        width: 32%;
+    }
+    .col-5 {
+        width: 40.5%;
+    }
+    .col-6 {
+        width: 50%; /*49*/
+    }
+    .col-7 {
+        width: 57.5%;
+    }
+    .col-8 {
+        width: 66%;
+    }
+    .col-9 {
+        width: 74.5%;
+    }
+    .col-10 {
+        width: 83%;
+    }
+    .col-11 {
+        width: 91.5%;
+    }
+    .col-12 {
+        width: 100%;
+    }
+}
+
+
+/*-- For mobile devices --*/
