@@ -14,8 +14,9 @@ html * {
 
 .row {
     width: 100%;
-    flex-wrap: wrap;
-    display: flex;
+    clear: both;
+    /*flex-wrap: wrap;
+    display: flex; TEST */
 }
 
 .col-1 {

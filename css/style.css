@@ -155,13 +155,15 @@ address {
 /* ||||||   Common Rules   |||||| */
 
 .item {
-    display: flex;
+    /*display: flex;
     display: -webkit-flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap;*/
     margin: 1.5em 0;
 }
-.item.online { justify-content: flex-start; }
-.item.offline { justify-content: flex-end; }
+.item.online { /*justify-content: flex-start;*/
+     }
+.item.offline { /*justify-content: flex-end;*/
+ }
 
 .online .project.row,
 .online .event.row {
@@ -419,6 +421,31 @@ footer .offlineSwitch { top: 3px; }
     margin-left: -35px;
 }
 
+/******** TEST *********/
+.date,
+.thumb,
+.info,
+.eventText { display: inline-block; }
+
+.online .date,
+.online .thumb,
+.offline .info,
+.online .eventText { float: right; }
+
+.offline .date,
+.offline .thumb,
+.online .eventText { float: left; }
+
+@media (min-width: 769px) {
+    .item.offline {
+        position: relative;
+        left: 50%;
+    }
+}
+
+
+.space { display: none; }
+
 
 /* |||||||||||||||||||||||    Responsive behavior    ||||||||||||||||||||||||| */
 
@@ -428,8 +455,8 @@ footer .offlineSwitch { top: 3px; }
 }
 
 @media (min-width: 769px) and (max-width: 1199px), (max-width: 670px){
-    .online .project .info { text-align: left; }
-    .offline .project .info { text-align: right; }
+    /*.online .project .info { text-align: left; }
+    .offline .project .info { text-align: right; }*/
 
     .skills { white-space: normal; }
     .skills li, .extlinks { display: inline-block; }
@@ -439,6 +466,23 @@ footer .offlineSwitch { top: 3px; }
 
     .online .info h3 { margin: 0 5px 3px 0; }
     .offline .info h3 { margin: 0 -2px 3px 0; }
+}
+@media (min-width: 769px) and (max-width: 1199px) {
+    .offline { display: block; }
+
+    .offline .info {
+    /* TEST */
+    position: relative;
+    left: 16.66%;
+    float: left;
+    }
+
+    .online .info {
+        /* TEST */
+        position: relative;
+        right: 16.66%;
+        float: right;
+    }
 }
 @media (min-device-width: 769px) and (max-device-width: 1199px) {
     .offline { display: block; }
@@ -499,6 +543,7 @@ footer .offlineSwitch { top: 3px; }
         right: 16.66%;
     }
     .offline .info {
+        float: left;
         position: relative;
         left: 16.66%;
     }
