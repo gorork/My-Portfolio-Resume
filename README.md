@@ -29,10 +29,11 @@ Try it live here: [nadikun.com/resume](http://nadikun.com/resume)
 
 ##Resources
 
-- [Normalize.css v3](https://github.com/necolas/normalize.css/): - To eliminate the differences between default browser styles in order them to render all elements more consistently.
-- [Font Awesome Icons](http://fortawesome.github.io/Font-Awesome/): - Scalable vector iconic font that can instantly be customized with CSS.
-- [jQuery](http://jquery.com/): - Cross-browser JavaScript library, to handle view switch on mobile devices.
-- [CSS Toggle Switch](http://callmenick.com/2014/05/13/css-toggle-switch-examples/): - CSS toggle element, again, to switch views on mobile devices.
+- [Normalize.css v3](https://github.com/necolas/normalize.css/) - To eliminate the differences between default browser styles in order them to render all elements more consistently.
+- [Font Awesome Icons](http://fortawesome.github.io/Font-Awesome/) - Scalable vector iconic font that can instantly be customized with CSS.
+- [jQuery](http://jquery.com/) - Cross-browser JavaScript library, to handle view switch on mobile devices.
+- [CSS Toggle Switch](http://callmenick.com/2014/05/13/css-toggle-switch-examples/) - CSS toggle element, again, to switch views on mobile devices.
+- [Force Element To Self-Clear its Children](http://css-tricks.com/snippets/css/clear-fix/) - Nice clearfix for grouped elements.
 
 
 ##Validated & Tested on the following real devices

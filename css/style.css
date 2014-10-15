@@ -543,11 +543,13 @@ footer .offlineSwitch { top: 3px; }
     .online .info {
         position: relative;
         right: 16.66%;
+        padding-right: 0;
     }
     .offline .info {
         float: left;
         position: relative;
         left: 16.66%;
+        padding-left: 0;
     }
 }
 /* for iPad horiz */
