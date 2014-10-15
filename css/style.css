@@ -30,7 +30,9 @@ ul {
 /* ||  Helpers  || */
 .item.moveUp { margin-top: -135px; }
 .item.halfMoveUp { margin-top: -67px; }
+
 .textShadow { text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); }
+
 .inlineBlock,
 .inlineList > li { display: inline-block; }
 
@@ -384,6 +386,7 @@ footer .switchWrap {
     padding-bottom: 4em;
 }
 .switchWrap h4 { color: #d8b45a; }
+
 header .switchWrap h4 { margin: 1.5em 0 .7em; }
 footer .switchWrap h4 { margin: 2em 0 .7em; }
 
@@ -393,8 +396,12 @@ footer .switchWrap h4 { margin: 2em 0 .7em; }
     font-weight: 400;
     position: relative;
 }
-header .onlineSwitch, header .offlineSwitch { top: -12px; }
-footer .onlineSwitch, footer .offlineSwitch { top: 3px; }
+header .onlineSwitch,
+header .offlineSwitch { top: -12px; }
+
+footer .onlineSwitch,
+footer .offlineSwitch { top: 3px; }
+
 .onlineSwitch {
     text-align: right;
     color: #EF596F;
@@ -405,6 +412,7 @@ footer .onlineSwitch, footer .offlineSwitch { top: 3px; }
     color: #2EC7CE;
     float: right;
 }
+
 .switch {
     position: absolute;
     left: 50%;
@@ -444,8 +452,11 @@ footer .onlineSwitch, footer .offlineSwitch { top: 3px; }
     #timeline::after,
     .offline { display: none; }
 
-    .item.moveUp, .item.halfMoveUp { margin-top: 0; }
-    footer .longLink, .switchWrap { display: block; }
+    .item.moveUp,
+    .item.halfMoveUp { margin-top: 0; }
+
+    footer .longLink,
+    .switchWrap { display: block; }
 
     #timeline.hideOffline::after { display: none; }
     #timeline.showOffline::after { display: block; }
@@ -454,11 +465,20 @@ footer .onlineSwitch, footer .offlineSwitch { top: 3px; }
     #timeline.showOnline::before { display: block; }
 }
 
-/* ||  Flex walkaround || */
+/* ||  Flex workarounds|| */
 @media only screen and (max-device-width: 1024px)  {
-    .date, .thumb, .info, .eventText { display: inline-block; }
-    .online .date, .online .thumb, .online .info, .online .eventText { float: right; }
+    .date,
+    .thumb,
+    .info,
+    .eventText { display: inline-block; }
+
+    .online .date,
+    .online .thumb,
+    .online .info,
+    .online .eventText { float: right; }
+
     .offline .date { float: left; }
+
     .space { display: none; }
 }
 @media only screen and (min-device-width: 769px) and (max-device-width: 1199px) {
