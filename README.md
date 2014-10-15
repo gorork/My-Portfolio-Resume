@@ -42,4 +42,6 @@ Try it live here: [nadikun.com/resume](http://nadikun.com/resume)
 - W3.org CSS Validator - [jigsaw.w3.org/css-validator](http://jigsaw.w3.org/css-validator/)
 - MacBook Pro
 - iPad Mini
+- iPad
+- ASUS MemoPad HD7
 - iPhone 5s

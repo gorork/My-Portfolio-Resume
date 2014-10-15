@@ -363,6 +363,7 @@ footer .longLink {
     position: relative;
     background-color: rgba(0,0,0,0.01);
 }
+
 header .switchWrap {
     border-bottom: 1px dashed #E2BC5E;
     padding-bottom: 3.5em;
@@ -372,6 +373,7 @@ footer .switchWrap {
     bottom: -40px;
     padding-bottom: 4em;
 }
+
 .switchWrap h4 { color: #d8b45a; }
 
 header .switchWrap h4 { margin: 1.5em 0 .7em; }
@@ -422,18 +424,17 @@ footer .offlineSwitch { top: 3px; }
 @media (min-width: 769px) and (max-width: 1199px), (max-width: 670px){
 
     .skills { white-space: normal; }
-    
+
     .skills li,
     .extlinks { display: inline-block; }
 
-    .extlinks { margin: 0 0 5px; }
+    .offline .extlinks { margin: 0 -3px 5px 2px; }
+    .online .extlinks { margin: 0 -3px 5px 4px; }
+
     .item { margin: 2.5em 0; }
 
-    .online .info h3 { margin: 0 5px 3px 0; }
-    .offline .info h3 { margin: 0 -2px 3px 0; }
-}
-
-@media (min-width: 769px) and (max-width: 1199px) {
+    .online .info h3 { margin: 0 -2px 3px 0; }
+    .offline .info h3 { margin: 0 0 3px 0; }
 
     .offline .info {
         left: 16.66%;
