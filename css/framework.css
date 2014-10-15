@@ -14,10 +14,21 @@ html * {
 
 .row {
     width: 100%;
-    clear: both;
+    /*clear: both;*/
+
     /*flex-wrap: wrap;
     display: flex; TEST */
 }
+
+.group:after {
+    visibility: hidden;
+    display: block;
+    content: "";
+    clear: both;
+    height: 0;
+}
+* html .group             { zoom: 1; } /* IE6 */
+*:first-child+html .group { zoom: 1; } /* IE7 */
 
 .col-1 {
     width: 8.33%; /*6.5%;*/
