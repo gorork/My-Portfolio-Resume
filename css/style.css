@@ -28,9 +28,6 @@ ul {
 }
 
 /* ||  Helpers  || */
-.item.moveUp { margin-top: -135px; }
-.item.halfMoveUp { margin-top: -67px; }
-
 .textShadow { text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); }
 
 .inlineBlock,
@@ -106,7 +103,6 @@ address {
     border-left: 3px solid #2EC7CE;
     border-right: 3px solid #2EC7CE;
 }
-.longLink { display: block; }
 
 .topLine {
     width: 50%;
@@ -154,27 +150,7 @@ address {
 
 /* ||||||   Common Rules   |||||| */
 
-.item {
-    /*display: flex;
-    display: -webkit-flex;
-    flex-wrap: wrap;*/
-    margin: 1.5em 0;
-}
-.item.online { /*justify-content: flex-start;*/
-     }
-.item.offline { /*justify-content: flex-end;*/
- }
-
-.online .project.row,
-.online .event.row {
-    flex-direction: row-reverse;
-}
-.offline .project.row,
-.offline .event.row {
-    flex-direction: row;
-}
-.row.project,
-nav.row { align-items: center; }
+.item { margin: 1.5em 0; }
 
 .online .eventText > h4,
 .online .thumb {
@@ -191,14 +167,24 @@ nav.row { align-items: center; }
 
 .online .project .info,
 .offline .project .thumb,
-.online .eventText {
-    text-align: right;
-}
+.online .eventText { text-align: right; }
 .offline .project .info,
 .online .project .thumb,
-.offline .eventText {
-    text-align: left;
-}
+.offline .eventText { text-align: left; }
+
+.date,
+.thumb,
+.info,
+.eventText { display: inline-block; }
+
+.online .date,
+.online .thumb,
+.offline .info,
+.online .eventText { float: right; }
+
+.offline .date,
+.offline .thumb,
+.online .eventText { float: left; }
 
 /* ||||||   Project block   |||||| */
 
@@ -216,8 +202,8 @@ nav.row { align-items: center; }
 
 /* ||  Info  || */
 .info {
-    align-self: flex-start;
     padding-top: 10px;
+    position: relative;
 }
 
 .online .info { padding-right: 1em; }
@@ -239,10 +225,10 @@ nav.row { align-items: center; }
 }
 
 .extlinks a {
-    border: none !important;
-    color: #F0CB70 !important;
+    border: none;
+    color: #F0CB70;
 }
-.extlinks a:hover {color: #fff !important;}
+.extlinks a:hover {color: #fff;}
 
 /* ||  Skills || */
 .skills {
@@ -259,7 +245,6 @@ nav.row { align-items: center; }
 
 /* ||||||   Even Block   |||||| */
 
-.eventText { align-self: center; }
 .eventText a { color: #2F4F4F; }
 
 .online .eventText a:hover { color: #EF596F; }
@@ -398,11 +383,6 @@ footer .switchWrap h4 { margin: 2em 0 .7em; }
     font-weight: 400;
     position: relative;
 }
-header .onlineSwitch,
-header .offlineSwitch { top: -12px; }
-
-footer .onlineSwitch,
-footer .offlineSwitch { top: 3px; }
 
 .onlineSwitch {
     text-align: right;
@@ -414,37 +394,17 @@ footer .offlineSwitch { top: 3px; }
     color: #2EC7CE;
     float: right;
 }
-
 .switch {
     position: absolute;
     left: 50%;
     margin-left: -35px;
 }
 
-/******** TEST *********/
-.date,
-.thumb,
-.info,
-.eventText { display: inline-block; }
+header .onlineSwitch,
+header .offlineSwitch { top: -12px; }
 
-.online .date,
-.online .thumb,
-.offline .info,
-.online .eventText { float: right; }
-
-.offline .date,
-.offline .thumb,
-.online .eventText { float: left; }
-
-@media (min-width: 769px) {
-    .item.offline {
-        position: relative;
-        left: 50%;
-    }
-}
-
-
-.space { display: none; }
+footer .onlineSwitch,
+footer .offlineSwitch { top: 3px; }
 
 
 /* |||||||||||||||||||||||    Responsive behavior    ||||||||||||||||||||||||| */
@@ -452,14 +412,19 @@ footer .offlineSwitch { top: 3px; }
 @media (min-width: 769px) {
     .top.online {float: left;}
     .top.offline {float: right;}
+
+    .item.offline {
+        position: relative;
+        left: 50%;
+    }
 }
 
 @media (min-width: 769px) and (max-width: 1199px), (max-width: 670px){
-    /*.online .project .info { text-align: left; }
-    .offline .project .info { text-align: right; }*/
 
     .skills { white-space: normal; }
-    .skills li, .extlinks { display: inline-block; }
+    
+    .skills li,
+    .extlinks { display: inline-block; }
 
     .extlinks { margin: 0 0 5px; }
     .item { margin: 2.5em 0; }
@@ -467,39 +432,28 @@ footer .offlineSwitch { top: 3px; }
     .online .info h3 { margin: 0 5px 3px 0; }
     .offline .info h3 { margin: 0 -2px 3px 0; }
 }
+
 @media (min-width: 769px) and (max-width: 1199px) {
-    .offline { display: block; }
 
     .offline .info {
-    /* TEST */
-    position: relative;
-    left: 16.66%;
-    float: left;
+        left: 16.66%;
+        float: left;
         padding-left: 0;
     }
-
     .online .info {
-        /* TEST */
-        position: relative;
         right: 16.66%;
         float: right;
         padding-right: 0;
     }
 }
-@media (min-device-width: 769px) and (max-device-width: 1199px) {
-    .offline { display: block; }
-    .offline .info { float: right; }
-}
 
 @media (max-width: 768px) {
+
     #timeline::before { left: 100%; }
     #timeline::after { left: 0; }
 
     #timeline::after,
     .offline { display: none; }
-
-    .item.moveUp,
-    .item.halfMoveUp { margin-top: 0; }
 
     footer .longLink,
     .switchWrap { display: block; }
@@ -509,68 +463,4 @@ footer .offlineSwitch { top: 3px; }
 
     #timeline.hideOnline::before { display: none; }
     #timeline.showOnline::before { display: block; }
-}
-
-/* ||  Flex workarounds|| */
-@media only screen and (max-device-width: 1024px)  {
-    .date,
-    .thumb,
-    .info,
-    .eventText { display: inline-block; }
-
-    .online .date,
-    .online .thumb,
-    .online .info,
-    .online .eventText { float: right; }
-
-    .offline .date { float: left; }
-
-    .space { display: none; }
-}
-@media only screen and (min-device-width: 769px) and (max-device-width: 1199px) {
-    .offline .info {
-        position: relative;
-        left: 16.66%;
-    }
-    .offline .project,
-    .offline .event {
-        position: relative;
-        left: 50%;
-    }
-    .online .info { position: relative; }
-}
-@media only screen and (max-device-width: 670px)  {
-    .online .info {
-        position: relative;
-        right: 16.66%;
-        padding-right: 0;
-    }
-    .offline .info {
-        float: left;
-        position: relative;
-        left: 16.66%;
-        padding-left: 0;
-    }
-}
-/* for iPad horiz */
-@media only screen and (max-device-width: 1024px) and (min-device-width: 768px) and (orientation:landscape) {
-    .offline .project,
-    .offline .event {
-        position: relative;
-        left: 50%;
-    }
-    .online .info {
-        position: relative;
-        right: 16.66%;
-    }
-    .offline .info {
-        position: relative;
-        left: 16.66%;
-    }
-}
-/* for iPad vert */
-@media only screen and (max-device-width: 1024px) and (min-device-width: 768px) and (orientation:portrait) {
-    .offline .info {
-        float: right;
-    }
 }
