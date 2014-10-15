@@ -68,6 +68,14 @@ header img{
 header a{color: #F0CB70;}
 header a:hover{ color: #fff; }
 
+address {
+    font-style: normal;
+    font-weight: 600;
+    color: rgb(226, 188, 94);
+    margin-top: 1.5em;
+    margin-bottom: -0.5em;
+}
+
 
 /* |||||||||||||||||||||||    Timeline    ||||||||||||||||||||||||| */
 
@@ -223,7 +231,7 @@ nav.row { align-items: center; }
 .extlinks { margin: 10px 0 5px; }
 .extlinks .fa{
     font-size: 1.5em;
-    margin: 0 2px; /* first-last */
+    margin: 0 2px;
 }
 
 .extlinks a {
@@ -253,13 +261,18 @@ nav.row { align-items: center; }
 .online .eventText a:hover { color: #EF596F; }
 .offline .eventText a:hover { color: #2EC7CE; }
 
+.eventText .fa {
+    position: absolute;
+    top: 50%;
+    margin-top: -7px;
+}
 .online .eventText .fa {
     color: #EF596F;
-    margin-left: 15px;
+    right: 12px;
 }
 .offline .eventText .fa {
     color: #2EC7CE;
-    margin-right: 15px;
+    left: 12px;
 }
 .eventText > h4 {
     margin: 0;
@@ -268,7 +281,10 @@ nav.row { align-items: center; }
     border-radius: 5px;
     color: #2F4F4F;
     font-size: 1em;
+    position: relative;
 }
+.online .eventText > h4 { padding-right: 44px; }
+.offline .eventText > h4 { padding-left: 44px; }
 
 /* ||||||   Date Pointer   |||||| */
 
@@ -303,7 +319,6 @@ footer{
     position:relative;
     text-align: center;
     bottom: 25px;
-    padding-bottom: 1em;
 }
 footer p { margin: .1em; }
 
@@ -351,6 +366,51 @@ footer .longLink {
     border-right-color: transparent;
 }
 
+/* ||||||   Switch (mobile screens only)   |||||| */
+
+.switchWrap {
+    display: none;
+    border-top: 1px dashed #E2BC5E;
+    position: relative;
+    background-color: rgba(0,0,0,0.01);
+}
+header .switchWrap {
+    border-bottom: 1px dashed #E2BC5E;
+    padding-bottom: 3.5em;
+    margin-bottom: .5em;
+}
+footer .switchWrap {
+    bottom: -40px;
+    padding-bottom: 4em;
+}
+.switchWrap h4 { color: #d8b45a; }
+header .switchWrap h4 { margin: 1.5em 0 .7em; }
+footer .switchWrap h4 { margin: 2em 0 .7em; }
+
+.onlineSwitch,
+.offlineSwitch {
+    display: inline-block;
+    font-weight: 400;
+    position: relative;
+}
+header .onlineSwitch, header .offlineSwitch { top: -12px; }
+footer .onlineSwitch, footer .offlineSwitch { top: 3px; }
+.onlineSwitch {
+    text-align: right;
+    color: #EF596F;
+    float: left;
+}
+.offlineSwitch {
+    text-align: left;
+    color: #2EC7CE;
+    float: right;
+}
+.switch {
+    position: absolute;
+    left: 50%;
+    margin-left: -35px;
+}
+
 
 /* |||||||||||||||||||||||    Responsive behavior    ||||||||||||||||||||||||| */
 
@@ -372,39 +432,46 @@ footer .longLink {
     .online .info h3 { margin: 0 5px 3px 0; }
     .offline .info h3 { margin: 0 -2px 3px 0; }
 }
+@media (min-device-width: 769px) and (max-device-width: 1199px) {
+    .offline { display: block; }
+    .offline .info { float: right; }
+}
 
 @media (max-width: 768px) {
     #timeline::before { left: 100%; }
+    #timeline::after { left: 0; }
 
     #timeline::after,
     .offline { display: none; }
 
     .item.moveUp, .item.halfMoveUp { margin-top: 0; }
-    footer .longLink { display: block; }
+    footer .longLink, .switchWrap { display: block; }
+
+    #timeline.hideOffline::after { display: none; }
+    #timeline.showOffline::after { display: block; }
+
+    #timeline.hideOnline::before { display: none; }
+    #timeline.showOnline::before { display: block; }
 }
 
-/* ||  Flex fix || */
+/* ||  Flex walkaround || */
 @media only screen and (max-device-width: 1024px)  {
-    .event, .project { display: block; }
+    .date, .thumb, .info, .eventText { display: inline-block; }
     .online .date, .online .thumb, .online .info, .online .eventText { float: right; }
-    .offline .date, .offline .thumb, .offline .info, .offline .eventText { float: left; }
+    .offline .date { float: left; }
+    .space { display: none; }
 }
-
-@media only screen and (min-device-width: 769px) and (max-device-width: 1199px),
-(min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
+@media only screen and (min-device-width: 769px) and (max-device-width: 1199px) {
     .offline .info {
         position: relative;
         left: 16.66%;
-    }
-    .online .info {
-        position: relative;
-        right: 16.66%;
     }
     .offline .project,
     .offline .event {
         position: relative;
         left: 50%;
     }
+    .online .info { position: relative; }
 }
 @media only screen and (max-device-width: 670px)  {
     .online .info {
@@ -416,11 +483,17 @@ footer .longLink {
         left: 16.66%;
     }
 }
-
-
-/* todos:
-- icons in long events?
-- switch between Online and Offline
-- validate code before submition
-- why I dont' use Bootstrap despite it was recommended
-*/
+/* for iPad horiz */
+@media only screen and (max-device-width: 1024px) and (min-device-width: 768px) and (orientation:landscape) {
+    .offline .project,
+    .offline .event {
+        position: relative;
+        left: 50%;
+    }
+}
+/* for iPad vert */
+@media only screen and (max-device-width: 1024px) and (min-device-width: 768px) and (orientation:portrait) {
+    .offline .info {
+        float: right;
+    }
+}
