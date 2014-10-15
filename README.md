@@ -5,15 +5,6 @@ My Portfolio / Resume featuring timeline story
 
 Try it live here: [nadikun.com/resume](http://nadikun.com/resume)
 
-##Features
-
-- Custom 12 column grid
-- Custom responsive behavior via @media quaries
-- Icon fonts from Icomoon
-- Modular Sass
-- Consistent Vertical Rhythm
-
-
 ##For my Front-end Nanodegree committee 
 *"I hereby confirm that this submission is my work. I have cited above the origins of any parts of the submission that were taken from Websites, books, forums, blog posts, github repositories, etc. By including this in my email, I understand that I will be expected to explain my work in a video call with a Udacity coach before I can receive my verified certificate."*
 
@@ -33,7 +24,7 @@ Try it live here: [nadikun.com/resume](http://nadikun.com/resume)
 - **Separation of Concerns** 
   - no inline CSS 
 - **Code Quality** 
-  - code is logically formatted and consistent, The CSS is a by project of `sass --watch`, set to :nested. Tabs are set to 2 spaces. Code is validated through W3C validator.
+  - code is logically formatted and consistent, corresponds with [Udacity style guide](https://storage.googleapis.com/supplemental_media/udacityu/2642898741/UdacityHTMLCSSStyleGuide.pdf?GoogleAccessId=1069728276824-2uvq09l4tiplc0gf30rskdsgvtam6k1j@developer.gserviceaccount.com&Expires=1413365489&Signature=rtuCeLmyhN3H9fxO4RjGTcabGYX45WeXmU6mIH8na9YXHwlRnn9D1p%2Bm6o1iszaJHiSB/qGRffUtcQXaR9uFnZuKFAdRXshAro/gz/0jYCj48QfiBZ1dJWCj6mWSUdH3AvErC3IarMLsVG2LrLxLXxlefzRldp0evxeJYI6HVEI%3D)
 
 
 ##Resources
@@ -50,8 +41,4 @@ Try it live here: [nadikun.com/resume](http://nadikun.com/resume)
 - W3.org CSS Validator - [jigsaw.w3.org/css-validator](http://jigsaw.w3.org/css-validator/)
 - MacBook Pro
 - iPad Mini
-- iPad 
 - iPhone 5s
-- iPhone 4
-- iPhone 3G
-- Samsung 
