@@ -202,13 +202,40 @@ address {
 /* || Img on hover || */
 .thumb { position: relative; }
 
-figcaption {
+.thumb figcaption {
   visibility: hidden;
   position: absolute;
-  left: 1em;
-  top: 1em;
+  left: 4%;
+  top: 4%;
   color: #777;
+  width: 88%;
+  height: 88%;
+  font-weight: 500;
 }
+.offline .thumb figcaption {
+  text-align: left;
+  left: 6.5%;
+}
+.thumb figcaption h4 {
+  font-weight: 800;
+  margin: .8em 0 .5em;
+}
+.thumb figcaption p {
+  margin-top: 0;
+  text-align: justify;
+}
+
+.thumb figcaption li {
+  margin-left: 1.2em;
+  margin-bottom: .3em;
+}
+
+.thumb figcaption li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+}
+
 .tint {
   background-color: #fff;
   float: left;
