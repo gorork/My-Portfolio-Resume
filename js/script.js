@@ -1,6 +1,7 @@
 $(document).ready(function(){
 
   /* Toggle button */
+
   var timeline = $('#timeline');
   var toggleTop = $("#toggleTop");
   var toggleBottom = $("#toggleBottom");
@@ -54,4 +55,22 @@ $(document).ready(function(){
       timeline.addClass('hideOffline', 300);
     }
   });
+
+
+  /* Project image on hover */
+
+  $('.thumb').hover(
+    function() { // on hover
+
+      $( this ).find('img').css('opacity','0.05')                  // making image transparent
+               .wrap('<div class="tint"></div>');                  // wrap in div with white background class
+      $( this ).find('figcaption').css('visibility','visible');    // showing project description
+
+    }, function() { // reverse all
+
+      $( this ).find('img').css('opacity','1')
+               .unwrap();
+      $( this ).find('figcaption').css('visibility','hidden');
+    });
+
 });
