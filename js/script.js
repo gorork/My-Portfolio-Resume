@@ -2,25 +2,31 @@ $(document).ready(function(){
 
   /* Toggle button */
 
-  var timeline = $('#timeline');
-  var toggleTop = $("#toggleTop");
-  var toggleBottom = $("#toggleBottom");
-  var online = $('.online');
-  var offline = $('.offline');
+  var timeline, toggleTop, toggleBottom, online, offline;
 
-  toggleTop.change(function() {
-    if(this.checked) {
+  timeline = $('#timeline');
+  toggleTop = $("#toggleTop");
+  toggleBottom = $("#toggleBottom");
+  online = $('.online');
+  offline = $('.offline');
+
+  toggleTop.change(function() {                                      // when top toggle is switched
+    if(this.checked) {                                               // if toggle is switched to Offline
       toggleBottom.prop('checked', true);
+
       timeline.removeClass('showOnline', 300)
         .removeClass('hideOffline', 300);
+
       online.fadeOut(300, function(){
         offline.fadeIn(300);
         timeline.addClass('showOffline', 300);
       });
+
       timeline.addClass('hideOnline', 300);
 
-    } else {
+    } else {                                                         // if toggle is switched to Online
       toggleBottom.prop('checked', false);
+
       timeline.removeClass('showOffline', 300)
         .removeClass('hideOnline', 300);
 
@@ -28,12 +34,13 @@ $(document).ready(function(){
         online.fadeIn(300);
         timeline.addClass('showOnline', 300);
       });
+
       timeline.addClass('hideOffline', 300);
     }
   });
 
-  toggleBottom.change(function() {
-    if(this.checked) {
+  toggleBottom.change(function() {                                  // when bottom toggle is switched
+    if(this.checked) {                                              // if toggle is switched to Offline
       toggleTop.prop('checked', true);
       timeline.removeClass('showOnline', 300)
         .removeClass('hideOffline', 300);
@@ -43,7 +50,7 @@ $(document).ready(function(){
       });
       timeline.addClass('hideOnline', 300);
 
-    } else {
+    } else {                                                        // if toggle is switched to Online
       toggleTop.prop('checked', false);
       timeline.removeClass('showOffline', 300)
         .removeClass('hideOnline', 300);
