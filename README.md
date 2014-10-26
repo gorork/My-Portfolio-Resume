@@ -5,13 +5,13 @@ My Portfolio / Resume featuring timeline story
 
 Try it live here: [nadikun.com/resume](http://nadikun.com/resume)
 
+![Nadi's portfolio](http://nadikun.com/resume/img/portfolio-mobile800x600.jpg)
+
 ##For my Front-end Nanodegree committee 
 *"I hereby confirm that this submission is my work. I have cited above the origins of any parts of the submission that were taken from Websites, books, forums, blog posts, github repositories, etc. By including this in my email, I understand that I will be expected to explain my work in a video call with a Udacity coach before I can receive my verified certificate."*
 
 
 ##Rubric Criteria
-
-[Link to FED Nanodegree Rubric](https://www.udacity.com/course/viewer#!/c-nd001/l-2736698543/m-2642898741)
  
 - **Design**: 
   - grid-based and modular layout
