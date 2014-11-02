@@ -508,3 +508,11 @@ footer .offlineSwitch { top: 3px; }
   #timeline.hideOnline::before { display: none; }
   #timeline.showOnline::before { display: block; }
 }
+
+/* Animation */
+
+header .longLink,
+#timeline,
+.ribbon,
+.fa-bolt,
+.fa-certificate { visibility: hidden; }
