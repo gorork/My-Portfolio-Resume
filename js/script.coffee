@@ -66,7 +66,7 @@ $(document).ready ->
 
 $('.thumb').hover ->
 
-    $( @ ).find('img').css('opacity','0.05').wrap '<div class="tint"></div>'
+    $( @ ).find('img').css('opacity','0.05').wrap('<div class="tint"></div>')
     $( @ ).find('figcaption').css('visibility','visible')
 
   , ->
