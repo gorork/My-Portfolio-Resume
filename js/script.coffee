@@ -64,7 +64,7 @@ $(document).ready ->
 
   # Project image on hover
 
-$('.thumb').hover ->
+  $('.thumb').hover ->
 
     $( @ ).find('img').css('opacity','0.05').wrap('<div class="tint"></div>')
     $( @ ).find('figcaption').css('visibility','visible')
@@ -73,3 +73,25 @@ $('.thumb').hover ->
 
     $( @ ).find('img').css('opacity','1').unwrap()
     $( @ ).find('figcaption').css('visibility','hidden')
+
+
+  # Onload animation
+
+  # 1. Birth icon appears + lightning + timeline shifting up
+  appear = (elem) ->
+    elem.animate({
+      opacity: 1,
+      fontSize: '9em'
+    }, 1000, =>
+      elem.animate({
+          fontSize: '7em'
+        }, 100
+      )
+    )
+
+  appear $('.fa-certificate')
+  appear $('.fa-bolt')
+
+  # 2. Loading projects and events one by one
+
+  # 3. Sides labels appear on the top

@@ -509,10 +509,10 @@ footer .offlineSwitch { top: 3px; }
   #timeline.showOnline::before { display: block; }
 }
 
-/* Animation */
+/* Onload animation */
 
 header .longLink,
 #timeline,
 .ribbon,
 .fa-bolt,
-.fa-certificate { visibility: hidden; }
+.fa-certificate { opacity: 0; }
