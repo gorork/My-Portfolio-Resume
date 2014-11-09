@@ -53,19 +53,29 @@
       return $(this).find('figcaption').css('visibility', 'hidden');
     });
     appear = function(elem) {
+      var elemFontSize;
+      elemFontSize = elem.css('fontSize');
       return elem.animate({
         opacity: 1,
-        fontSize: '9em'
-      }, 1000, (function(_this) {
+        fontSize: parseInt(elemFontSize) * 1.2
+      }, 300, (function(_this) {
         return function() {
           return elem.animate({
-            fontSize: '7em'
+            fontSize: elemFontSize
           }, 100);
         };
       })(this));
     };
     appear($('.fa-certificate'));
-    return appear($('.fa-bolt'));
+    setTimeout(function() {
+      return appear($('.fa-bolt'));
+    }, 600);
+    return setTimeout(function() {
+      return $('.ribbon').animate({
+        opacity: 1,
+        top: 0
+      }, 300);
+    }, 1200);
   });
 
 }).call(this);

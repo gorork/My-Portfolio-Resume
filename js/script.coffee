@@ -79,18 +79,28 @@ $(document).ready ->
 
   # 1. Birth icon appears + lightning + timeline shifting up
   appear = (elem) ->
+    elemFontSize = elem.css 'fontSize'
     elem.animate({
       opacity: 1,
-      fontSize: '9em'
-    }, 1000, =>
+      fontSize: parseInt(elemFontSize) * 1.2
+    }, 300, =>
       elem.animate({
-          fontSize: '7em'
+          fontSize: elemFontSize
         }, 100
       )
     )
 
   appear $('.fa-certificate')
-  appear $('.fa-bolt')
+  setTimeout( ->
+    appear $('.fa-bolt')
+  , 600)
+  setTimeout( ->
+    $('.ribbon').animate({
+      opacity : 1,
+      top     : 0
+      }, 300)
+  , 1200)
+
 
   # 2. Loading projects and events one by one
 

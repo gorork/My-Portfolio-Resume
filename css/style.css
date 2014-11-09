@@ -359,11 +359,14 @@ footer .fa-certificate {
   font-size: 7em;
 }
 footer .fa-bolt {
-  position: absolute;
-  margin-left: -59px;
-  margin-top: 5px;
   font-size: 2.7em;
   color: #2EC7CE;
+  position: absolute;
+  margin: 5px auto auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 footer .longLink {
   position: relative;
@@ -516,3 +519,7 @@ header .longLink,
 .ribbon,
 .fa-bolt,
 .fa-certificate { opacity: 0; }
+
+.ribbon {
+  top: -60px;
+}
