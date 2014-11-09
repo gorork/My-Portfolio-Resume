@@ -91,15 +91,23 @@ $(document).ready ->
     )
 
   appear $('.fa-certificate')
+
   setTimeout( ->
     appear $('.fa-bolt')
   , 600)
+
   setTimeout( ->
     $('.ribbon').animate({
       opacity : 1,
       top     : 0
-      }, 300)
+      }, 250)
   , 1200)
+
+  setTimeout( ->
+    $('#timeline').animate({
+      opacity : 1
+    }, 1500)
+  , 2000)
 
 
   # 2. Loading projects and events one by one

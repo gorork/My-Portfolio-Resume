@@ -70,12 +70,17 @@
     setTimeout(function() {
       return appear($('.fa-bolt'));
     }, 600);
-    return setTimeout(function() {
+    setTimeout(function() {
       return $('.ribbon').animate({
         opacity: 1,
         top: 0
-      }, 300);
+      }, 250);
     }, 1200);
+    return setTimeout(function() {
+      return $('#timeline').animate({
+        opacity: 1
+      }, 1500);
+    }, 2000);
   });
 
 }).call(this);
