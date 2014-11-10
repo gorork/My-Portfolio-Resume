@@ -162,7 +162,7 @@ $(document).ready ->
       opacity : 1,
       top     : 0
       }, 250)
-  , 1600)
+  , 2400)
 
   # Timeline appears
   setTimeout( ->
@@ -170,7 +170,7 @@ $(document).ready ->
       opacity : 1
     }, 800)
     appear $('header .longLink')
-  , 2200)
+  , 3800)
 
 
   # Show projects and events one by one
@@ -180,9 +180,9 @@ $(document).ready ->
     listItems = $('#timeline > ul > li').reverse()
     listItems.each( (i) ->
       console.log i
-      $(@).hide().delay(i*2000).fadeIn(800)
+      $(@).hide().delay(i*3400).slideDown(600)
     )
-  , 3400)
+  , 5600)
 
 
   # Project image on hover

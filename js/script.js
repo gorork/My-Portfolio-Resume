@@ -103,22 +103,22 @@
         opacity: 1,
         top: 0
       }, 250);
-    }, 1600);
+    }, 2400);
     setTimeout(function() {
       $('#timeline').animate({
         opacity: 1
       }, 800);
       return appear($('header .longLink'));
-    }, 2200);
+    }, 3800);
     $.fn.reverse = [].reverse;
     setTimeout(function() {
       var listItems;
       listItems = $('#timeline > ul > li').reverse();
       return listItems.each(function(i) {
         console.log(i);
-        return $(this).hide().delay(i * 2000).fadeIn(800);
+        return $(this).hide().delay(i * 3400).slideDown(600);
       });
-    }, 3400);
+    }, 5600);
     return $('.thumb').hover(function() {
       $(this).find('img').css('opacity', '0.05').wrap('<div class="tint"></div>');
       return $(this).find('figcaption').css('visibility', 'visible');
