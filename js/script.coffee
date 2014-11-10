@@ -77,7 +77,6 @@ $(document).ready ->
 
   # Onload animation
 
-  # 1. Birth icon appears + lightning + timeline shifting up
   appear = (elem) ->
     elemFontSize = elem.css 'fontSize'
     elem.animate({
@@ -90,12 +89,13 @@ $(document).ready ->
       )
     )
 
+  # Birth icon appears
   appear $('.fa-certificate')
-
   setTimeout( ->
     appear $('.fa-bolt')
   , 600)
 
+  # Ribbon appears
   setTimeout( ->
     $('.ribbon').animate({
       opacity : 1,
@@ -103,13 +103,92 @@ $(document).ready ->
       }, 250)
   , 1200)
 
+  # TImeline appears
   setTimeout( ->
     $('#timeline').animate({
       opacity : 1
-    }, 1500)
+    }, 800)
   , 2000)
 
 
   # 2. Loading projects and events one by one
+
+  timelineUl = timeline.find('ul')
+  items = []
+
+  $.getJSON("projects.json").done( ( data ) ->
+    $.each( data.items, ( i, item ) ->
+      items.push(item)
+      console.log item
+      console.log i
+      console.log items
+    )
+
+    $.each( items, ( i, item ) ->
+      #setTimeout( ->
+
+      if items[i].type is "event" and items[i].scope is "online"
+        timelineUl.append(
+          console.log 'event append'
+          '<li class="group item online"> <!-- Event -->
+            <section class="col-6 col-tab-12 col-ph-12 row event">
+              <div class="col-1 col-sm-2 col-ph-2 date">
+                <p>' + items[i].year + '</p>
+              </div>
+              <div class="col-11 col-sm-10 col-ph-10 eventText">
+                <h4 class="inlineBlock">' + items[i].title + '</h4>
+              </div>
+            </section>
+          </li> <!-- event -->'
+        )
+      else if items[i].type is "project" and items[i].scope is "online"
+        timelineUl.append(
+          console.log 'project append'
+          '<li class="group item online"> <!-- Project -->
+            <section class="col-6 col-tab-12 col-ph-12 row project ">
+              <div class="col-1 col-sm-2 col-ph-2 date">
+                <p>' + items[i].year + '</p>
+              </div>
+              <figure class="col-7 col-sm-9 col-ph-9 thumb">
+                <img src="' + items[i].img + '" alt="' + items[i].imgAlt + '"/>
+                <figcaption>' + items[i].description + '</figcaption>
+              </figure>
+              <div class="col-4 col-sm-9 col-ph-9 info">
+                <h3>' + items[i].title + '</h3>
+                <ul class="extlinks inlineList">
+                  <li><a href="' + items[i].extLink + '" target="_blank"><i class="fa fa-dribbble"></i></a></li>
+                </ul>
+                <ul class="skills">
+                  <li><span>Design / UI / UX</span></li>
+                  <li><span>HTML5 / CSS3</span></li>
+                  <li><span>Bootstrap 3</span></li>
+                  <li><span>Google Search API</span></li>
+                  <li><span>JavaScript</span></li>
+                </ul>
+              </div>
+            </section>
+          </li> <!-- project -->'
+        )
+      #, 1500)
+    )
+  )
+
+  $.fn.reverse = [].reverse;
+
+  setTimeout( ->
+
+    listItems = $('#timeline > ul > li').reverse()
+
+    listItems.each( (i) ->
+      console.log i
+      $(@).hide().delay(i*2000).fadeIn(1000)
+    )
+
+    ###for i in listItems.length
+      console.log listItems.length
+      $('#timeline > ul > li:hidden:last').hide().delay(i*2000).fadeIn(1500)###
+
+  , 3500)
+
 
   # 3. Sides labels appear on the top

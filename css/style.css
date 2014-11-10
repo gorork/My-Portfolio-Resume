@@ -515,10 +515,12 @@ footer .offlineSwitch { top: 3px; }
 /* Onload animation */
 
 header .longLink,
-#timeline,
 .ribbon,
+#timeline,
 .fa-bolt,
 .fa-certificate { opacity: 0; }
+
+#timeline > ul > li {display: none;}
 
 .ribbon {
   top: -60px;
