@@ -91,10 +91,26 @@
         return console.log(items);
       });
       return $.each(items, function(i, item) {
-        if (items[i].type === "event" && items[i].scope === "online") {
-          return timelineUl.append(console.log('event append'), '<li class="group item online"> <!-- Event --> <section class="col-6 col-tab-12 col-ph-12 row event"> <div class="col-1 col-sm-2 col-ph-2 date"> <p>' + items[i].year + '</p> </div> <div class="col-11 col-sm-10 col-ph-10 eventText"> <h4 class="inlineBlock">' + items[i].title + '</h4> </div> </section> </li> <!-- event -->');
-        } else if (items[i].type === "project" && items[i].scope === "online") {
-          return timelineUl.append(console.log('project append'), '<li class="group item online"> <!-- Project --> <section class="col-6 col-tab-12 col-ph-12 row project "> <div class="col-1 col-sm-2 col-ph-2 date"> <p>' + items[i].year + '</p> </div> <figure class="col-7 col-sm-9 col-ph-9 thumb"> <img src="' + items[i].img + '" alt="' + items[i].imgAlt + '"/> <figcaption>' + items[i].description + '</figcaption> </figure> <div class="col-4 col-sm-9 col-ph-9 info"> <h3>' + items[i].title + '</h3> <ul class="extlinks inlineList"> <li><a href="' + items[i].extLink + '" target="_blank"><i class="fa fa-dribbble"></i></a></li> </ul> <ul class="skills"> <li><span>Design / UI / UX</span></li> <li><span>HTML5 / CSS3</span></li> <li><span>Bootstrap 3</span></li> <li><span>Google Search API</span></li> <li><span>JavaScript</span></li> </ul> </div> </section> </li> <!-- project -->');
+        var link, skill, _i, _j, _len, _len1, _ref, _ref1;
+        if (items[i].type === "event") {
+          timelineUl.append(console.log('event append'), '<li class="group item"> <!-- Event --> <section class="col-6 col-tab-12 col-ph-12 row event"> <div class="col-1 col-sm-2 col-ph-2 date"> <p>' + items[i].year + '</p> </div> <div class="col-11 col-sm-10 col-ph-10 eventText"> <h4 class="inlineBlock">' + items[i].title + '</h4> </div> </section> </li> <!-- event -->');
+        } else if (items[i].type === "project") {
+          timelineUl.append(console.log('project append'), '<li class="group item"> <!-- Project --> <section class="col-6 col-tab-12 col-ph-12 row project "> <div class="col-1 col-sm-2 col-ph-2 date"> <p>' + items[i].year + '</p> </div> <figure class="col-7 col-sm-9 col-ph-9 thumb"> <img src="' + items[i].img + '" alt="' + items[i].imgAlt + '"/> <figcaption>' + items[i].description + '</figcaption> </figure> <div class="col-4 col-sm-9 col-ph-9 info"> <h3>' + items[i].title + '</h3> <ul class="extlinks inlineList"></ul> <ul class="skills"></ul> </div> </section> </li> <!-- project -->');
+          _ref = items[i].extLinks;
+          for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+            link = _ref[_i];
+            timelineUl.find('.extlinks').append('<li><a href="' + link.url + '" target="_blank"><i class="fa fa-' + link.name + '"></i></a></li>');
+          }
+          _ref1 = items[i].skills;
+          for (_j = 0, _len1 = _ref1.length; _j < _len1; _j++) {
+            skill = _ref1[_j];
+            timelineUl.find('.skills').append('<li><span>' + skill + '</span></li>');
+          }
+        }
+        if (items[i].scope === "online") {
+          return timelineUl.find('.item').addClass('online');
+        } else {
+          return timelineUl.find('.item').addClass('offline');
         }
       });
     });

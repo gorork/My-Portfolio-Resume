@@ -125,12 +125,11 @@ $(document).ready ->
     )
 
     $.each( items, ( i, item ) ->
-      #setTimeout( ->
 
-      if items[i].type is "event" and items[i].scope is "online"
+      if items[i].type is "event"
         timelineUl.append(
           console.log 'event append'
-          '<li class="group item online"> <!-- Event -->
+          '<li class="group item"> <!-- Event -->
             <section class="col-6 col-tab-12 col-ph-12 row event">
               <div class="col-1 col-sm-2 col-ph-2 date">
                 <p>' + items[i].year + '</p>
@@ -141,10 +140,10 @@ $(document).ready ->
             </section>
           </li> <!-- event -->'
         )
-      else if items[i].type is "project" and items[i].scope is "online"
+      else if items[i].type is "project"
         timelineUl.append(
           console.log 'project append'
-          '<li class="group item online"> <!-- Project -->
+          '<li class="group item"> <!-- Project -->
             <section class="col-6 col-tab-12 col-ph-12 row project ">
               <div class="col-1 col-sm-2 col-ph-2 date">
                 <p>' + items[i].year + '</p>
@@ -155,21 +154,27 @@ $(document).ready ->
               </figure>
               <div class="col-4 col-sm-9 col-ph-9 info">
                 <h3>' + items[i].title + '</h3>
-                <ul class="extlinks inlineList">
-                  <li><a href="' + items[i].extLink + '" target="_blank"><i class="fa fa-dribbble"></i></a></li>
-                </ul>
-                <ul class="skills">
-                  <li><span>Design / UI / UX</span></li>
-                  <li><span>HTML5 / CSS3</span></li>
-                  <li><span>Bootstrap 3</span></li>
-                  <li><span>Google Search API</span></li>
-                  <li><span>JavaScript</span></li>
-                </ul>
+                <ul class="extlinks inlineList"></ul>
+                <ul class="skills"></ul>
               </div>
             </section>
           </li> <!-- project -->'
         )
-      #, 1500)
+
+        for link in items[i].extLinks
+          timelineUl.find('.extlinks').append(
+            '<li><a href="' + link.url + '" target="_blank"><i class="fa fa-' + link.name + '"></i></a></li>'
+          )
+
+        for skill in items[i].skills
+          timelineUl.find('.skills').append(
+            '<li><span>' + skill + '</span></li>'
+          )
+
+      if items[i].scope is "online"
+        timelineUl.find('.item').addClass('online')
+      else
+        timelineUl.find('.item').addClass('offline')
     )
   )
 
