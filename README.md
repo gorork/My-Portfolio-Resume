@@ -3,7 +3,7 @@ My Portfolio Resume
 
 My Portfolio / Resume featuring timeline story
 
-Try it live here: [nadikun.com/resume](http://nadikun.com/resume)
+Try it live here: [nadikun.com/portfolio](http://nadikun.com/portfolio)
 
 ![Nadi's portfolio](http://nadikun.com/resume/img/portfolio-mobile800x600.jpg)
 
