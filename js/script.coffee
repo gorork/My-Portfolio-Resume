@@ -62,56 +62,7 @@ $(document).ready ->
       timeline.addClass 'hideOffline', 300
 
 
-  # Project image on hover
-
-  $('.thumb').hover ->
-
-    $( @ ).find('img').css('opacity','0.05').wrap('<div class="tint"></div>')
-    $( @ ).find('figcaption').css('visibility','visible')
-
-  , ->
-
-    $( @ ).find('img').css('opacity','1').unwrap()
-    $( @ ).find('figcaption').css('visibility','hidden')
-
-
-  # Onload animation
-
-  appear = (elem) ->
-    elemFontSize = elem.css 'fontSize'
-    elem.animate({
-      opacity: 1,
-      fontSize: parseInt(elemFontSize) * 1.2
-    }, 300, =>
-      elem.animate({
-          fontSize: elemFontSize
-        }, 100
-      )
-    )
-
-  # Birth icon appears
-  appear $('.fa-certificate')
-  setTimeout( ->
-    appear $('.fa-bolt')
-  , 600)
-
-  # Ribbon appears
-  setTimeout( ->
-    $('.ribbon').animate({
-      opacity : 1,
-      top     : 0
-      }, 250)
-  , 1200)
-
-  # TImeline appears
-  setTimeout( ->
-    $('#timeline').animate({
-      opacity : 1
-    }, 800)
-  , 2000)
-
-
-  # 2. Loading projects and events one by one
+  # Get projects from JSON
 
   timelineUl = timeline.find('ul')
   items = []
@@ -150,7 +101,12 @@ $(document).ready ->
               </div>
               <figure class="col-7 col-sm-9 col-ph-9 thumb">
                 <img src="' + items[i].img + '" alt="' + items[i].imgAlt + '"/>
-                <figcaption>' + items[i].description + '</figcaption>
+                <figcaption>
+                  <h4>Project scope:</h4>
+                  <p>' + items[i].description + '</p>
+                  <h4>My roles:</h4>
+                  <ul></ul>
+                </figcaption>
               </figure>
               <div class="col-4 col-sm-9 col-ph-9 info">
                 <h3>' + items[i].title + '</h3>
@@ -161,39 +117,82 @@ $(document).ready ->
           </li> <!-- project -->'
         )
 
+        # Add project's external links
         for link in items[i].extLinks
-          timelineUl.find('.extlinks').append(
-            '<li><a href="' + link.url + '" target="_blank"><i class="fa fa-' + link.name + '"></i></a></li>'
+          timelineUl.find('.extlinks:last').append(
+            '<li><a href="' + link.url + '" target="_blank"><i class="fa fa-' + link.icon + '"></i></a></li>'
           )
-
+        # Add project's skills
         for skill in items[i].skills
-          timelineUl.find('.skills').append(
+          timelineUl.find('.skills:last').append(
             '<li><span>' + skill + '</span></li>'
           )
-
       if items[i].scope is "online"
-        timelineUl.find('.item').addClass('online')
+        timelineUl.find('.item:last').addClass('online')
       else
-        timelineUl.find('.item').addClass('offline')
+        timelineUl.find('.item:last').addClass('offline')
     )
   )
 
-  $.fn.reverse = [].reverse;
+  # Onload animation
 
-  setTimeout( ->
-
-    listItems = $('#timeline > ul > li').reverse()
-
-    listItems.each( (i) ->
-      console.log i
-      $(@).hide().delay(i*2000).fadeIn(1000)
+  appear = (elem) ->
+    elemFontSize = elem.css 'fontSize'
+    elem.animate({
+      opacity: 1,
+      fontSize: parseInt(elemFontSize) * 1.2
+    }, 300, =>
+      elem.animate({
+          fontSize: elemFontSize
+        }, 100
+      )
     )
 
-    ###for i in listItems.length
-      console.log listItems.length
-      $('#timeline > ul > li:hidden:last').hide().delay(i*2000).fadeIn(1500)###
+  # Birth icon appears
+  setTimeout( ->
+    appear $('.fa-certificate')
+  , 400)
+  setTimeout( ->
+    appear $('.fa-bolt')
+  , 1000)
 
-  , 3500)
+  # Ribbon appears
+  setTimeout( ->
+    $('.ribbon').animate({
+      opacity : 1,
+      top     : 0
+      }, 250)
+  , 1600)
+
+  # Timeline appears
+  setTimeout( ->
+    $('#timeline').animate({
+      opacity : 1
+    }, 800)
+    appear $('header .longLink')
+  , 2200)
 
 
-  # 3. Sides labels appear on the top
+  # Show projects and events one by one
+
+  $.fn.reverse = [].reverse;
+  setTimeout( ->
+    listItems = $('#timeline > ul > li').reverse()
+    listItems.each( (i) ->
+      console.log i
+      $(@).hide().delay(i*2000).fadeIn(800)
+    )
+  , 3400)
+
+
+  # Project image on hover
+
+  $('.thumb').hover ->
+
+    $( @ ).find('img').css('opacity','0.05').wrap('<div class="tint"></div>')
+    $( @ ).find('figcaption').css('visibility','visible')
+
+  , ->
+
+    $( @ ).find('img').css('opacity','1').unwrap()
+    $( @ ).find('figcaption').css('visibility','hidden')
