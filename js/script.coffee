@@ -100,7 +100,7 @@ $(document).ready ->
                 <p>' + items[i].year + '</p>
               </div>
               <figure class="col-7 col-sm-9 col-ph-9 thumb">
-                <img src="' + items[i].img + '" alt="' + items[i].imgAlt + '"/>
+                <img src="' + items[i].img + '" alt="' + items[i].title + '"/>
                 <figcaption>
                   <h4>Project scope:</h4>
                   <p>' + items[i].description + '</p>
