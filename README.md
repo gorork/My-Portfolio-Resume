@@ -7,7 +7,7 @@ Try it live here: [nadikun.com/portfolio](http://nadikun.com/portfolio)
 
 ![Nadi's portfolio](http://nadikun.com/resume/img/portfolio-mobile800x600.jpg)
 
-##Rubric Criteria
+##Basic points
  
 - **Design**: 
   - grid-based and modular layout
@@ -19,17 +19,6 @@ Try it live here: [nadikun.com/portfolio](http://nadikun.com/portfolio)
   - tested on real devices
 - **Separation of Concerns** 
   - no inline CSS 
-- **Code Quality** 
-  - code is logically formatted and consistent, corresponds with [Udacity style guide](https://storage.googleapis.com/supplemental_media/udacityu/2642898741/UdacityHTMLCSSStyleGuide.pdf?GoogleAccessId=1069728276824-2uvq09l4tiplc0gf30rskdsgvtam6k1j@developer.gserviceaccount.com&Expires=1413365489&Signature=rtuCeLmyhN3H9fxO4RjGTcabGYX45WeXmU6mIH8na9YXHwlRnn9D1p%2Bm6o1iszaJHiSB/qGRffUtcQXaR9uFnZuKFAdRXshAro/gz/0jYCj48QfiBZ1dJWCj6mWSUdH3AvErC3IarMLsVG2LrLxLXxlefzRldp0evxeJYI6HVEI%3D)
-
-
-##Resources
-
-- [Normalize.css v3](https://github.com/necolas/normalize.css/) - To eliminate the differences between default browser styles in order them to render all elements more consistently.
-- [Font Awesome Icons](http://fortawesome.github.io/Font-Awesome/) - Scalable vector iconic font that can instantly be customized with CSS.
-- [jQuery](http://jquery.com/) - Cross-browser JavaScript library, to handle view switch on mobile devices.
-- [CSS Toggle Switch](http://callmenick.com/2014/05/13/css-toggle-switch-examples/) - CSS toggle element, again, to switch views on mobile devices.
-- [Force Element To Self-Clear its Children](http://css-tricks.com/snippets/css/clear-fix/) - Nice clearfix for grouped elements.
 
 
 ##Validated & Tested on the following real devices
@@ -41,3 +30,12 @@ Try it live here: [nadikun.com/portfolio](http://nadikun.com/portfolio)
 - iPad
 - ASUS MemoPad HD7
 - iPhone 5s
+
+
+##Resources used
+
+- [Normalize.css v3](https://github.com/necolas/normalize.css/) - To eliminate the differences between default browser styles in order them to render all elements more consistently.
+- [Font Awesome Icons](http://fortawesome.github.io/Font-Awesome/) - Scalable vector iconic font that can instantly be customized with CSS.
+- [jQuery](http://jquery.com/) - Cross-browser JavaScript library, to handle view switch on mobile devices.
+- [CSS Toggle Switch](http://callmenick.com/2014/05/13/css-toggle-switch-examples/) - CSS toggle element, again, to switch views on mobile devices.
+- [Force Element To Self-Clear its Children](http://css-tricks.com/snippets/css/clear-fix/) - Nice clearfix for grouped elements.
