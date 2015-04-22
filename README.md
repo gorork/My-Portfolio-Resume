@@ -7,17 +7,13 @@ Try it live here: [nadikun.com/portfolio](http://nadikun.com/portfolio)
 
 ![Nadi's portfolio](http://nadikun.com/resume/img/portfolio-mobile800x600.jpg)
 
-##For my Front-end Nanodegree committee 
-*"I hereby confirm that this submission is my work. I have cited above the origins of any parts of the submission that were taken from Websites, books, forums, blog posts, github repositories, etc. By including this in my email, I understand that I will be expected to explain my work in a video call with a Udacity coach before I can receive my verified certificate."*
-
-
 ##Rubric Criteria
  
 - **Design**: 
   - grid-based and modular layout
   - semantic tags
   - personalized design
-  - additional functionality
+  - animation
 - **Responsive**: 
   - custom breakpoints that suit both common mobile screens and portfolio's design
   - tested on real devices
